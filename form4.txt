@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace KeoThaProject
+{
+    public partial class Form4 : Form
+    {
+        Dictionary<string, int> addedRooms;
+        Dictionary<string, int> addedItems;
+        int paymentAmount = 0;
+        
+        public Form4()
+        {
+            InitializeComponent();
+        }
+        
+        private void paymentInfoBtn_Click(object sender, EventArgs e)
+        {
+            using (Form1 f1 = new Form1())
+            {
+                if (f1.ShowDialog() == DialogResult.OK)
+                {
+                    addedItems = f1.addedItems;
+                    addedRooms = f1.addedRooms;
+                    MessageBox.Show(addedItems.Count().ToString());
+                    foreach (var item in addedRooms)
+                    {
+                        paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
+                        paymentAmount += item.Value;
+                    }
+                    foreach (var item in addedItems)
+                    {
+                        paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
+                        paymentAmount += item.Value;
+                    }
+                    label6.Text = paymentAmount.ToString();
+                }
+            }
+        }
+    }
+}

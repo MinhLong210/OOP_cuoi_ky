@@ -1,0 +1,13 @@
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TreeNode test = new TreeNode("New House");
+                treeView1.Nodes.Add(test);
+                LoadTree(CpMainHouse, test);
+            }
+            catch
+            {
+                return;
+            }
+        }
