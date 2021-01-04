@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KeoThaProject
 {
@@ -85,9 +86,11 @@ namespace KeoThaProject
         }
         public Form1()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
-            pictureBox.BackgroundImage = Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\background1.png");
+            string path = Directory.GetCurrentDirectory();
+            path = path + @"\image\background1.png";
+            pictureBox.BackgroundImage = Image.FromFile(path);
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
 
             curRoom = new List<Leaf>();
@@ -97,7 +100,7 @@ namespace KeoThaProject
             bm1 = new Bitmap(pictureBox.Width, pictureBox.Height);
             bm2 = new Bitmap(pictureBox.Width, pictureBox.Height);
 
-            CpMainHouse.Im = Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\background1.png");
+            CpMainHouse.Im = Image.FromFile(path);
             treeView1.Nodes.Add(TnMainHouse);
             LoadTree(CpMainHouse, TnMainHouse);
         }

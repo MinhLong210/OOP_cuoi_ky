@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KeoThaProject
 {
@@ -17,7 +18,6 @@ namespace KeoThaProject
         private int current;
         public Image returnIm;
         public string returnName;
-        
         #region payment
         public int returnPrice;
         #endregion
@@ -25,17 +25,20 @@ namespace KeoThaProject
         public Form3()
         {
             InitializeComponent();
+            string path = Directory.GetCurrentDirectory();
+            string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25;
+            p1 = path + @"\image\background1.png";
+            p2 = path + @"\image\background2.jpg";
             current = 0;
             listIm = new List<Image>();
             #region payment
             listPrice = new List<int>();
             #endregion
-            listIm.Add(Image.FromFile(@"D:\CODE\C#\KeoThaProject\image\background1.png"));
+            listIm.Add(Image.FromFile(p1));
             listPrice.Add(1000);
-
-            listIm.Add(Image.FromFile(@"D:\CODE\C#\KeoThaProject\image\background2.jpg"));
+            listIm.Add(Image.FromFile(p2));
             listPrice.Add(1500);
-            pictureBox1.Image = listIm[0];
+            pictureBox1.Image    = listIm[0];
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -43,22 +46,21 @@ namespace KeoThaProject
         {
             current--;
             pictureBox1.Image = listIm[current % (listIm.Count)];
-            priceLabel.Text = listPrice[current % (listPrice.Count)].ToString();
+            priceLabel.Text   = listPrice[current % (listPrice.Count)].ToString();
         }
 
         private void Right_Click(object sender, EventArgs e)
         {
             current++;
             pictureBox1.Image = listIm[current % (listIm.Count)];
-            priceLabel.Text = listPrice[current % (listPrice.Count)].ToString();
+            priceLabel.Text   = listPrice[current % (listPrice.Count)].ToString();
         }
 
         private void Ok_Click(object sender, EventArgs e)
         {
-            this.returnIm = listIm[current % (listIm.Count)];
-            this.returnName = textBox1.Text.ToString();
+            this.returnIm     = listIm[current % (listIm.Count)];
+            this.returnName   = textBox1.Text.ToString();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
-
             #region payment
             returnPrice = int.Parse(priceLabel.Text); 
             #endregion
