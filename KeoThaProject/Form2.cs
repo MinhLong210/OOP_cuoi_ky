@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KeoThaProject
 {
@@ -24,13 +25,18 @@ namespace KeoThaProject
         public Form2()
         {
             InitializeComponent();
+            string path = Directory.GetCurrentDirectory();
+            string table1Path = path + @"\image\table1.png";
+            string chair1Path = path + @"\image\chair1.png";
+
             current = 0;
             listIm = new List<Image>();
             listPrice = new List<int>();
-            listIm.Add(Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\table1.png"));
+            listIm.Add(Image.FromFile(table1Path));
             listPrice.Add(200);
-            listIm.Add(Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\chair1.png"));
+            listIm.Add(Image.FromFile(chair1Path));
             listPrice.Add(100);
+
             pictureBox1.Image = listIm[0];
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }

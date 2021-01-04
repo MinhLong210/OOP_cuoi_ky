@@ -79,7 +79,6 @@ namespace KeoThaProject
         
         private void paymentInfoBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(addedItems.Count().ToString());
             foreach (var item in addedRooms)
             {
                 paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;

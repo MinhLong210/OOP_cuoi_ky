@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EWalletNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.idBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.EWalletNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +55,31 @@
             this.dataGridView1.Size = new System.Drawing.Size(518, 59);
             this.dataGridView1.TabIndex = 3;
             // 
+            // EWalletNumber
+            // 
+            this.EWalletNumber.HeaderText = "Wallet Number";
+            this.EWalletNumber.MinimumWidth = 8;
+            this.EWalletNumber.Name = "EWalletNumber";
+            this.EWalletNumber.Width = 150;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 8;
+            this.name.Name = "name";
+            this.name.Width = 150;
+            // 
+            // balance
+            // 
+            this.balance.HeaderText = "Balance";
+            this.balance.MinimumWidth = 8;
+            this.balance.Name = "balance";
+            this.balance.Width = 150;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.Pay);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.label1);
@@ -91,26 +114,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter your EWallet number: ";
             // 
-            // EWalletNumber
+            // Pay
             // 
-            this.EWalletNumber.HeaderText = "Wallet Number";
-            this.EWalletNumber.MinimumWidth = 8;
-            this.EWalletNumber.Name = "EWalletNumber";
-            this.EWalletNumber.Width = 150;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.MinimumWidth = 8;
-            this.name.Name = "name";
-            this.name.Width = 150;
-            // 
-            // balance
-            // 
-            this.balance.HeaderText = "Balance";
-            this.balance.MinimumWidth = 8;
-            this.balance.Name = "balance";
-            this.balance.Width = 150;
+            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
+            this.Pay.Location = new System.Drawing.Point(16, 135);
+            this.Pay.Name = "Pay";
+            this.Pay.Size = new System.Drawing.Size(94, 34);
+            this.Pay.TabIndex = 14;
+            this.Pay.Text = "Pay";
+            this.Pay.UseVisualStyleBackColor = false;
             // 
             // Form6
             // 
@@ -138,5 +150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EWalletNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
+        private System.Windows.Forms.Button Pay;
     }
 }

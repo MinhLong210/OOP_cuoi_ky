@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.idBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.idBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Pay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.Pay);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.label1);
@@ -50,6 +52,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(273, 454);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(169, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Show info";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // idBox
+            // 
+            this.idBox.Location = new System.Drawing.Point(16, 58);
+            this.idBox.Name = "idBox";
+            this.idBox.Size = new System.Drawing.Size(131, 26);
+            this.idBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(11, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter your ID: ";
             // 
             // dataGridView1
             // 
@@ -86,31 +114,15 @@
             this.balance.Name = "balance";
             this.balance.Width = 150;
             // 
-            // label1
+            // Pay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(11, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter your ID: ";
-            // 
-            // idBox
-            // 
-            this.idBox.Location = new System.Drawing.Point(16, 58);
-            this.idBox.Name = "idBox";
-            this.idBox.Size = new System.Drawing.Size(131, 26);
-            this.idBox.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(169, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Show info";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
+            this.Pay.Location = new System.Drawing.Point(16, 126);
+            this.Pay.Name = "Pay";
+            this.Pay.Size = new System.Drawing.Size(94, 34);
+            this.Pay.TabIndex = 13;
+            this.Pay.Text = "Pay";
+            this.Pay.UseVisualStyleBackColor = false;
             // 
             // Form5
             // 
@@ -138,5 +150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
+        private System.Windows.Forms.Button Pay;
     }
 }

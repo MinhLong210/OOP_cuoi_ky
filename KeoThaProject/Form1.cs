@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace KeoThaProject
         Bitmap bm1,bm2;
         Graphics g;
         Image curIm;
+        string path = Directory.GetCurrentDirectory();
 
         #region 
         int curPrice;
@@ -85,9 +87,9 @@ namespace KeoThaProject
         }
         public Form1()
         {
-            InitializeComponent(); 
-
-            pictureBox.BackgroundImage = Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\background1.png");
+            InitializeComponent();
+            string background1Path = path + @"\image\background1.png";
+            pictureBox.BackgroundImage = Image.FromFile(background1Path);
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
 
             curRoom = new List<Leaf>();
@@ -97,7 +99,7 @@ namespace KeoThaProject
             bm1 = new Bitmap(pictureBox.Width, pictureBox.Height);
             bm2 = new Bitmap(pictureBox.Width, pictureBox.Height);
 
-            CpMainHouse.Im = Image.FromFile(@"C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\image\background1.png");
+            CpMainHouse.Im = Image.FromFile(background1Path);
             treeView1.Nodes.Add(TnMainHouse);
             LoadTree(CpMainHouse, TnMainHouse);
         }
