@@ -21,36 +21,48 @@ namespace KeoThaProject
             InitializeComponent();
             addedItems = items;
             addedRooms = rooms;
+            foreach (var item in addedRooms)
+            {
+                paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
+                paymentAmount += item.Value;
+            }
+            foreach (var item in addedItems)
+            {
+                paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
+                paymentAmount += item.Value;
+            }
+            label6.Text = paymentAmount.ToString();
         }
 
         public abstract class Payment
         {
             public Payment() { }
-            public abstract int getResult();
+            public abstract void getResult();
         }
 
         public class PaymentCash: Payment
         {
             public PaymentCash() { }
-            public override int getResult()
+            public override void getResult()
             {
-                return 0;
+                
             }
         }
         public class PaymentCreditCard : Payment
         {
-            public PaymentCreditCard() { }
-            public override int getResult()
+            public PaymentCreditCard() {
+            }
+            public override void getResult()
             {
-                return 0;
+               
             }
         }
         public class PaymentEWallet : Payment
         {
             public PaymentEWallet() { }
-            public override int getResult()
+            public override void getResult()
             {
-                return 0;
+                
             }
         }
 
@@ -77,20 +89,7 @@ namespace KeoThaProject
             }
         }
         
-        private void paymentInfoBtn_Click(object sender, EventArgs e)
-        {
-            foreach (var item in addedRooms)
-            {
-                paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
-                paymentAmount += item.Value;
-            }
-            foreach (var item in addedItems)
-            {
-                paymentInfoBox.Text += item.Key + " " + item.Value.ToString() + Environment.NewLine;
-                paymentAmount += item.Value;
-            }
-            label6.Text = paymentAmount.ToString();
-        }
+        
 
         private void selectBtn_Click(object sender, EventArgs e)
         {
@@ -104,7 +103,9 @@ namespace KeoThaProject
                     Form6 f6 = new Form6(paymentAmount);
                     f6.Show();
                     break;
+                    
             }    
         }
+        
     }
 }

@@ -33,7 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.paymentInfoBox = new System.Windows.Forms.TextBox();
-            this.paymentInfoBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.selectBtn = new System.Windows.Forms.Button();
@@ -85,16 +84,6 @@
             this.paymentInfoBox.Size = new System.Drawing.Size(195, 207);
             this.paymentInfoBox.TabIndex = 5;
             // 
-            // paymentInfoBtn
-            // 
-            this.paymentInfoBtn.Location = new System.Drawing.Point(47, 108);
-            this.paymentInfoBtn.Name = "paymentInfoBtn";
-            this.paymentInfoBtn.Size = new System.Drawing.Size(75, 37);
-            this.paymentInfoBtn.TabIndex = 6;
-            this.paymentInfoBtn.Text = "Get info";
-            this.paymentInfoBtn.UseVisualStyleBackColor = true;
-            this.paymentInfoBtn.Click += new System.EventHandler(this.paymentInfoBtn_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -144,7 +133,6 @@
             this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.paymentInfoBtn);
             this.Controls.Add(this.paymentInfoBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -164,7 +152,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox paymentInfoBox;
-        private System.Windows.Forms.Button paymentInfoBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button selectBtn;

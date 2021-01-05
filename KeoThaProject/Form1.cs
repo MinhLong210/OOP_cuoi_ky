@@ -19,7 +19,7 @@ namespace KeoThaProject
         Bitmap bm1,bm2;
         Graphics g;
         Image curIm;
-        string path = Directory.GetCurrentDirectory();
+        
 
         #region 
         int curPrice;
@@ -47,12 +47,12 @@ namespace KeoThaProject
             {
                 this.name = name;
             }
-            public Component(string name, Point p, Image Im, int cost)
+            public Component(string name, Point p, Image Im)
             {
                 this.name = name;
                 this.location = p;
                 this.Im = Im;
-                this.cost = cost;
+    
             }
             public virtual void add(Component component) { }
             public virtual void remove(Component component) { }
@@ -62,7 +62,7 @@ namespace KeoThaProject
         {
             public List<Component> list = new List<Component>();
             public Composite(string name) : base(name) { }
-            public Composite(string name,Point p,Image Im, int price) : base(name,p,Im, price) { }
+            public Composite(string name,Point p,Image Im) : base(name,p,Im) { }
             public override void add(Component component)
             {
                 list.Add(component);
@@ -75,7 +75,7 @@ namespace KeoThaProject
         public class Leaf : Component
         {
             public Leaf(string n) : base(n) { }
-            public Leaf(string name, Point p, Image Im, int price) : base(name, p, Im, price) { }
+            public Leaf(string name, Point p, Image Im) : base(name, p, Im) { }
             public override void add(Component component)
             {
                 return;
@@ -88,8 +88,11 @@ namespace KeoThaProject
         public Form1()
         {
             InitializeComponent();
+            string path = Directory.GetCurrentDirectory();
             string background1Path = path + @"\image\background1.png";
             pictureBox.BackgroundImage = Image.FromFile(background1Path);
+
+
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
 
             curRoom = new List<Leaf>();
@@ -100,6 +103,8 @@ namespace KeoThaProject
             bm2 = new Bitmap(pictureBox.Width, pictureBox.Height);
 
             CpMainHouse.Im = Image.FromFile(background1Path);
+
+
             treeView1.Nodes.Add(TnMainHouse);
             LoadTree(CpMainHouse, TnMainHouse);
         }
@@ -139,7 +144,7 @@ namespace KeoThaProject
                     {
                         if (f3.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-                            Composite newRoom = new Composite(f3.returnName, new Point(0, 0), f3.returnIm, f3.returnPrice);
+                            Composite newRoom = new Composite(f3.returnName, new Point(0, 0), f3.returnIm);
                             composite.add(newRoom);
                             newNodeRoom.Text = f3.returnName;
                             newNodeRoom.Tag = newRoom;
@@ -231,7 +236,7 @@ namespace KeoThaProject
             {
                 curLocation = e.Location;
                 bm1 = (Bitmap)bm2.Clone();
-                Leaf newItem = new Leaf(curName, curLocation, curIm, curPrice);
+                Leaf newItem = new Leaf(curName, curLocation, curIm);
                 curComposite.add(newItem);
                 curNode.Tag = newItem;
                 treeView1.SelectedNode.Nodes.Add(curNode);
@@ -248,7 +253,7 @@ namespace KeoThaProject
         private void Update()
         {
             curRoom.Clear();
-            Composite composite = new Composite(null,new Point(0,0),null,0);
+            Composite composite = new Composite(null,new Point(0,0),null);
             if (treeView1.SelectedNode.Tag is Composite)
             {
                 composite = (Composite)treeView1.SelectedNode.Tag;

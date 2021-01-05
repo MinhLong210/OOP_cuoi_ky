@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Pay = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.idBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(273, 454);
             this.panel1.TabIndex = 0;
+            // 
+            // Pay
+            // 
+            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
+            this.Pay.Location = new System.Drawing.Point(16, 126);
+            this.Pay.Name = "Pay";
+            this.Pay.Size = new System.Drawing.Size(94, 34);
+            this.Pay.TabIndex = 13;
+            this.Pay.Text = "Pay";
+            this.Pay.UseVisualStyleBackColor = false;
+            this.Pay.Click += new System.EventHandler(this.Pay_Click);
             // 
             // button1
             // 
@@ -113,16 +124,6 @@
             this.balance.MinimumWidth = 8;
             this.balance.Name = "balance";
             this.balance.Width = 150;
-            // 
-            // Pay
-            // 
-            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
-            this.Pay.Location = new System.Drawing.Point(16, 126);
-            this.Pay.Name = "Pay";
-            this.Pay.Size = new System.Drawing.Size(94, 34);
-            this.Pay.TabIndex = 13;
-            this.Pay.Text = "Pay";
-            this.Pay.UseVisualStyleBackColor = false;
             // 
             // Form5
             // 

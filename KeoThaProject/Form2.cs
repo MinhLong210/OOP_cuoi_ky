@@ -26,6 +26,7 @@ namespace KeoThaProject
         {
             InitializeComponent();
             string path = Directory.GetCurrentDirectory();
+
             string table1Path = path + @"\image\table1.png";
             string chair1Path = path + @"\image\chair1.png";
 
@@ -35,6 +36,17 @@ namespace KeoThaProject
             listIm.Add(Image.FromFile(table1Path));
             listPrice.Add(200);
             listIm.Add(Image.FromFile(chair1Path));
+
+            string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25;
+            p1 = path + @"\image\table1.png";
+            p2 = path + @"\image\chair1.png";
+            current = 0;
+            listIm = new List<Image>();
+            listPrice = new List<int>();
+            listIm.Add(Image.FromFile(p1));
+            listPrice.Add(200);
+            listIm.Add(Image.FromFile(p2));
+
             listPrice.Add(100);
 
             pictureBox1.Image = listIm[0];

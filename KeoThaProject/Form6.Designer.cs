@@ -33,10 +33,10 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Pay = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.idBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Pay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,17 @@
             this.panel1.Size = new System.Drawing.Size(273, 454);
             this.panel1.TabIndex = 2;
             // 
+            // Pay
+            // 
+            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
+            this.Pay.Location = new System.Drawing.Point(16, 135);
+            this.Pay.Name = "Pay";
+            this.Pay.Size = new System.Drawing.Size(94, 34);
+            this.Pay.TabIndex = 14;
+            this.Pay.Text = "Pay";
+            this.Pay.UseVisualStyleBackColor = false;
+            this.Pay.Click += new System.EventHandler(this.Pay_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(169, 46);
@@ -113,16 +124,6 @@
             this.label1.Size = new System.Drawing.Size(256, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter your EWallet number: ";
-            // 
-            // Pay
-            // 
-            this.Pay.BackColor = System.Drawing.Color.Chartreuse;
-            this.Pay.Location = new System.Drawing.Point(16, 135);
-            this.Pay.Name = "Pay";
-            this.Pay.Size = new System.Drawing.Size(94, 34);
-            this.Pay.TabIndex = 14;
-            this.Pay.Text = "Pay";
-            this.Pay.UseVisualStyleBackColor = false;
             // 
             // Form6
             // 

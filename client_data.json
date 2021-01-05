@@ -1,45 +1,40 @@
 {
-    "credit_card":{
-        "info":[
-            {
-                "id": "5374",
-                "name": "Long",
-                "balance": 2000
-            },
-
-            {
-                "id": "5384",
-                "name": "Minh",
-                "balance": 2300
-            },
-            
-            {
-                "id": "1234",
-                "name": "John Smith",
-                "balance": 1700
-            }
-        ]
-    },
-
-    "EWallet":{
-        "info":[
-            {
-                "id": "E5374",
-                "name": "Long",
-                "balance": 2000
-            },
-
-            {
-                "id": "E5384",
-                "name": "Minh",
-                "balance": 2300
-            },
-            
-            {
-                "id": "E1234",
-                "name": "John Smith",
-                "balance": 1700
-            }
-        ]
-    }
+  "credit_card": {
+    "info": [
+      {
+        "id": "5374",
+        "name": "Long",
+        "balance": "1200"
+      },
+      {
+        "id": "5384",
+        "name": "Minh",
+        "balance": "2300"
+      },
+      {
+        "id": "1234",
+        "name": "John Smith",
+        "balance": "1700"
+      }
+    ]
+  },
+  "EWallet": {
+    "info": [
+      {
+        "id": "E5374",
+        "name": "Long",
+        "balance": "2000"
+      },
+      {
+        "id": "E5384",
+        "name": "Minh",
+        "balance": "2300"
+      },
+      {
+        "id": "E1234",
+        "name": "John Smith",
+        "balance": "1700"
+      }
+    ]
+  }
 }
