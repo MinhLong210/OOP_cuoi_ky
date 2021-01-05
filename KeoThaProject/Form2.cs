@@ -37,12 +37,15 @@ namespace KeoThaProject
             listIm.Add(Image.FromFile(p2));
             listPrice.Add(100);
             pictureBox1.Image = listIm[0];
+            priceLabel.Text = listPrice[0].ToString();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void Right_Click(object sender, EventArgs e)
         {
             current++;
+            current = Math.Abs(current);
+            current = Math.Abs(current);
             pictureBox1.Image = listIm[current % (listIm.Count)];
             priceLabel.Text = listPrice[current % (listPrice.Count)].ToString();
         }
@@ -50,6 +53,8 @@ namespace KeoThaProject
         private void Left_Click(object sender, EventArgs e)
         {
             current--;
+            current = Math.Abs(current);
+            current = Math.Abs(current);
             pictureBox1.Image = listIm[current % (listIm.Count)];
             priceLabel.Text = listPrice[current % (listPrice.Count)].ToString();
         }

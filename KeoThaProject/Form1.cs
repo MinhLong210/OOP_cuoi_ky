@@ -145,7 +145,6 @@ namespace KeoThaProject
                             newNodeRoom.Text = f3.returnName;
                             newNodeRoom.Tag = newRoom;
                             treeView1.SelectedNode.Nodes.Add(newNodeRoom);
-
                             #region
                             addedRooms.Add(f3.returnName, f3.returnPrice);
                             #endregion
@@ -190,7 +189,6 @@ namespace KeoThaProject
                             curName = f2.returnName;
                             curNode = new TreeNode(curName);
                             addedItems.Add(f2.returnName, f2.returnPrice);
-
                         }
                     }
                 }
