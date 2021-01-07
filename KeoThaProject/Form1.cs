@@ -246,7 +246,7 @@ namespace KeoThaProject
 
         private void Pay_Click(object sender, EventArgs e)
         {
-            Form4 paymentForm = new Form4(addedRooms, addedItems);
+            FormPayment paymentForm = new FormPayment(addedRooms, addedItems);
             paymentForm.Show();
         }
 

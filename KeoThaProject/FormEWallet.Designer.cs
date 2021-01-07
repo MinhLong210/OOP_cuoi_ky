@@ -1,6 +1,6 @@
 ﻿namespace KeoThaProject
 {
-    partial class Form6
+    partial class FormEWallet
     {
         /// <summary>
         /// Required designer variable.

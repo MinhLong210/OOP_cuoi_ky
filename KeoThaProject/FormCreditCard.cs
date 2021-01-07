@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace KeoThaProject
 {
-    public partial class Form5 : Form
+    public partial class FormCreditCard : Form
     {
         List<string> clientIDList = new List<string>();
         List<string> clientNameList = new List<string>();
@@ -21,7 +21,7 @@ namespace KeoThaProject
         int paymentAmount;
         string json;
         dynamic array;
-        public Form5(int amount)
+        public FormCreditCard(int amount)
         {
             InitializeComponent();
          
@@ -38,6 +38,18 @@ namespace KeoThaProject
                 clientBalanceList.Add((item["balance"]).ToString());
             }
             paymentAmount = amount;
+        }
+        public class ClientInfo
+        {
+            string ID;
+            string name;
+            string balance;
+            public ClientInfo(string id, string na, string bal)
+            {
+                ID = id;
+                name = na;
+                balance = bal;
+            }
         }
 
         private void Pay_Click(object sender, EventArgs e)
@@ -71,6 +83,47 @@ namespace KeoThaProject
             catch(Exception exp)
             {
                 MessageBox.Show(exp.Message);
+            }
+        }
+
+
+
+
+
+
+        private void AddDataBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PaymentInfoBtn_Click(object sender, EventArgs e)
+        {
+            /*
+            MessageBox.Show(clientIDList.Count.ToString());
+            for(int i=0; i < array["credit_card"]["info"].Count; i++)
+            {
+                i = this.dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[1].Value = clientIDList[i];
+                dataGridView1.Rows[i].Cells[2].Value = clientNameList[i];
+                dataGridView1.Rows[i].Cells[3].Value = clientBalanceList[i];
+
+            }   
+            */
+            try
+            {
+                int clientIndex = clientIDList.IndexOf(idBox.Text);
+                MessageBox.Show(array["credit_card"]["info"][clientIndex]["name"].ToString());
+                MessageBox.Show(array["credit_card"]["info"][clientIndex]["balance"].ToString());
+
+                int index = this.dataGridView1.Rows.Add();
+                dataGridView1.Rows[index].Cells[1] = array["credit_card"]["info"][clientIndex]["id"].ToString();
+                dataGridView1.Rows[index].Cells[2] = array["credit_card"]["info"][clientIndex]["name"].ToString();
+                dataGridView1.Rows[index].Cells[3] = array["credit_card"]["info"][clientIndex]["balance"].ToString();
+
+            }
+            catch
+            {
+
             }
         }
     }

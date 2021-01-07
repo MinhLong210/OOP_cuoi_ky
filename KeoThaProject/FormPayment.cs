@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace KeoThaProject
 {
-    public partial class Form4 : Form
+    public partial class FormPayment : Form
     {
         Dictionary<string, int> addedRooms;
         Dictionary<string, int> addedItems;
-        int paymentAmount = 0;
+        public int paymentAmount;
         
-        public Form4(Dictionary<string, int> rooms, Dictionary<string, int> items)
+        public FormPayment(Dictionary<string, int> rooms, Dictionary<string, int> items)
         {
             InitializeComponent();
+            paymentAmount = 0;
             addedItems = items;
             addedRooms = rooms;
             foreach (var item in addedRooms)
@@ -50,28 +51,38 @@ namespace KeoThaProject
         }
         public class PaymentCreditCard : Payment
         {
-            public PaymentCreditCard() {
+            int pam;
+            public PaymentCreditCard(int Pam) {
+                pam = Pam;
             }
             public override void getResult()
             {
-               
+                FormCreditCard f5 = new FormCreditCard(pam);
+                f5.Show();   
             }
         }
         public class PaymentEWallet : Payment
         {
-            public PaymentEWallet() { }
+            int pam;
+            public PaymentEWallet(int Pam) {
+                pam = Pam;
+            }
+           
             public override void getResult()
             {
-                
+                FormEWallet f6 = new FormEWallet(pam);
+                f6.Show();
             }
         }
 
         public class PaymentFactory
         {
             protected string paymentType;
-            public PaymentFactory(string type)
+            protected int pam;
+            public PaymentFactory(string type, int Pam)
             {
                 paymentType = type;
+                pam = Pam;
             }
             
             public Payment createPaymentMethod()
@@ -79,9 +90,9 @@ namespace KeoThaProject
                 if (paymentType == "Cash")
                     return new PaymentCash();
                 if (paymentType == "Credit Card")
-                    return new PaymentCreditCard();
+                    return new PaymentCreditCard(pam);
                 if (paymentType == "Electronic Wallet")
-                    return new PaymentEWallet();
+                    return new PaymentEWallet(pam);
                 else
                 {
                     return new PaymentCash();
@@ -96,14 +107,16 @@ namespace KeoThaProject
             switch(comboBox1.SelectedItem)
             {
                 case "Credit Card":
-                    Form5 f5 = new Form5(paymentAmount);
-                    f5.Show();
+                    PaymentFactory paymentFactoryCC = new PaymentFactory("Credit Card", paymentAmount);
+                    Payment paymentMethodCC = paymentFactoryCC.createPaymentMethod();
+                    paymentMethodCC.getResult();
                     break;
                 case "Electronic Wallet":
-                    Form6 f6 = new Form6(paymentAmount);
-                    f6.Show();
+                    PaymentFactory paymentFactoryE = new PaymentFactory("Electronic Wallet", paymentAmount);
+                    Payment paymentMethodE = paymentFactoryE.createPaymentMethod();
+                    paymentMethodE.getResult();
                     break;
-                    
+
             }    
         }
         

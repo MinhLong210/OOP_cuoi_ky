@@ -22,9 +22,6 @@ C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\Ke
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.exe
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.pdb
-C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.Form4.resources
-C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.Form5.resources
-C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.Form6.resources
 C:\Users\T480\Source\Repos\MinhLong210\OOP_cuoi_ky\KeoThaProject\bin\Debug\KeoThaProject.exe.config
 C:\Users\T480\Source\Repos\MinhLong210\OOP_cuoi_ky\KeoThaProject\bin\Debug\KeoThaProject.exe
 C:\Users\T480\Source\Repos\MinhLong210\OOP_cuoi_ky\KeoThaProject\bin\Debug\KeoThaProject.pdb
@@ -44,3 +41,6 @@ C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\bin\Debug\Js
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.csproj.CopyComplete
+C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormPayment.resources
+C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormCreditCard.resources
+C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormEWallet.resources

@@ -1,6 +1,6 @@
 ﻿namespace KeoThaProject
 {
-    partial class Form4
+    partial class FormPayment
     {
         /// <summary>
         /// Required designer variable.

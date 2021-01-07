@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace KeoThaProject
 {
-    public partial class Form6 : Form
+    public partial class FormEWallet : Form
     {
         List<string> clientIDList = new List<string>();
         List<string> clientNameList = new List<string>();
@@ -21,7 +21,7 @@ namespace KeoThaProject
         int paymentAmount;
         string json;
         dynamic array;
-        public Form6(int amount)
+        public FormEWallet(int amount)
         {
             InitializeComponent();
 
