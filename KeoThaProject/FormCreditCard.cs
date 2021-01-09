@@ -56,33 +56,39 @@ namespace KeoThaProject
         {
             try
             {
-                int clientIndex = clientIDList.IndexOf(idBox.Text);
-                if(clientIndex != -1)
+                int clientIndex = -1;
+                for(int i=0; i< array["credit_card"]["info"].Count; i++)
                 {
-                    int moneyLeft = int.Parse(clientBalanceList[clientIndex])-paymentAmount;
+                    if(array["credit_card"]["info"][i]["id"]==idBox.Text)
+                    {
+                        clientIndex = i;
+                        break;
+                    }    
+                }    
+                if (clientIndex != -1)
+                {
+                    int moneyLeft = int.Parse(array["credit_card"]["info"][clientIndex]["balance"].ToString()) - paymentAmount;
                     if (moneyLeft < 0)
                         MessageBox.Show("Không đủ tiền trả: ");
                     else
                     {
                         clientBalanceList[clientIndex] = moneyLeft.ToString();
-       
 
-                        for (int i = 0; i < array["credit_card"]["info"].Count; i++)
-                        {
-                            if (array["credit_card"]["info"][i]["id"] == clientIDList[clientIndex])
-                            {
-                                array["credit_card"]["info"][i]["balance"] = moneyLeft.ToString();
-                                string output = Newtonsoft.Json.JsonConvert.SerializeObject(array, Newtonsoft.Json.Formatting.Indented);
-                                File.WriteAllText("C:\\Users\\Admin\\Documents\\TaiLieuHoc\\OOP\\KeoThaProject\\client_data.json", output);
-                            }
-                        }
+                        array["credit_card"]["info"][clientIndex]["balance"] = moneyLeft.ToString();
+                        string output = Newtonsoft.Json.JsonConvert.SerializeObject(array, Newtonsoft.Json.Formatting.Indented);
+                        File.WriteAllText("C:\\Users\\Admin\\Documents\\TaiLieuHoc\\OOP\\KeoThaProject\\client_data.json", output);
+                        
                         MessageBox.Show("Số tiền còn lại: " + moneyLeft.ToString());
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Không tồn tại id này");
+                }
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
-                MessageBox.Show(exp.Message);
+                MessageBox.Show(exp.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -111,20 +117,43 @@ namespace KeoThaProject
             */
             try
             {
-                int clientIndex = clientIDList.IndexOf(idBox.Text);
-                MessageBox.Show(array["credit_card"]["info"][clientIndex]["name"].ToString());
-                MessageBox.Show(array["credit_card"]["info"][clientIndex]["balance"].ToString());
-
-                int index = this.dataGridView1.Rows.Add();
-                dataGridView1.Rows[index].Cells[1] = array["credit_card"]["info"][clientIndex]["id"].ToString();
-                dataGridView1.Rows[index].Cells[2] = array["credit_card"]["info"][clientIndex]["name"].ToString();
-                dataGridView1.Rows[index].Cells[3] = array["credit_card"]["info"][clientIndex]["balance"].ToString();
-
+                int clientIndex = -1;
+                for (int i = 0; i < array["credit_card"]["info"].Count; i++)
+                {
+                    if (array["credit_card"]["info"][i]["id"] == idBox.Text)
+                    {
+                        clientIndex = i;
+                        break;
+                    }
+                }
+                if (clientIndex != -1)
+                {
+                    int index = this.dataGridView1.Rows.Add();
+                    dataGridView1.Rows[index].Cells[0].Value = array["credit_card"]["info"][clientIndex]["id"].ToString();
+                    dataGridView1.Rows[index].Cells[1].Value = array["credit_card"]["info"][clientIndex]["name"].ToString();
+                    dataGridView1.Rows[index].Cells[2].Value = array["credit_card"]["info"][clientIndex]["balance"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tồn tại id này", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch
+            catch(Exception exp)
             {
-
+                MessageBox.Show(exp.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            FormDeleteCreditCard f = new FormDeleteCreditCard();
+            f.Show();
+        }
+
+        private void changeBtn_Click(object sender, EventArgs e)
+        {
+            FormChangeCreditCard f = new FormChangeCreditCard();
+            f.Show();
         }
     }
 }

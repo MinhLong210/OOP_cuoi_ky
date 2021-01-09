@@ -38,6 +38,8 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddDataBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.changeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +105,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 121);
+            this.dataGridView1.Size = new System.Drawing.Size(683, 121);
             this.dataGridView1.TabIndex = 1;
             // 
             // id
@@ -129,7 +131,7 @@
             // 
             // AddDataBtn
             // 
-            this.AddDataBtn.Location = new System.Drawing.Point(896, 33);
+            this.AddDataBtn.Location = new System.Drawing.Point(334, 155);
             this.AddDataBtn.Name = "AddDataBtn";
             this.AddDataBtn.Size = new System.Drawing.Size(75, 38);
             this.AddDataBtn.TabIndex = 2;
@@ -137,11 +139,33 @@
             this.AddDataBtn.UseVisualStyleBackColor = true;
             this.AddDataBtn.Click += new System.EventHandler(this.AddDataBtn_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(458, 155);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 38);
+            this.deleteBtn.TabIndex = 3;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // changeBtn
+            // 
+            this.changeBtn.Location = new System.Drawing.Point(586, 155);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(75, 37);
+            this.changeBtn.TabIndex = 4;
+            this.changeBtn.Text = "Change";
+            this.changeBtn.UseVisualStyleBackColor = true;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
+            // 
             // FormCreditCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 450);
+            this.Controls.Add(this.changeBtn);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.AddDataBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -166,5 +190,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
         private System.Windows.Forms.Button Pay;
         private System.Windows.Forms.Button AddDataBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button changeBtn;
     }
 }

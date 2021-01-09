@@ -116,6 +116,11 @@ namespace KeoThaProject
                     Payment paymentMethodE = paymentFactoryE.createPaymentMethod();
                     paymentMethodE.getResult();
                     break;
+                case "Cash":
+                    break;
+                default:
+                    MessageBox.Show("Vui lòng chọn một phương thức thanh toán có sẵn");
+                    break;
 
             }    
         }

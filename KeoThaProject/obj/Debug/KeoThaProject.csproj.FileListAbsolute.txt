@@ -44,3 +44,5 @@ C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\Ke
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormPayment.resources
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormCreditCard.resources
 C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormEWallet.resources
+C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormDeleteCreditCard.resources
+C:\Users\Admin\Documents\TaiLieuHoc\OOP\KeoThaProject\KeoThaProject\obj\Debug\KeoThaProject.FormChangeCreditCard.resources

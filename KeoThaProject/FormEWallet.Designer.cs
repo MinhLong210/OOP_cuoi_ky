@@ -34,9 +34,10 @@
             this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Pay = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.paymentInfoBtn = new System.Windows.Forms.Button();
             this.idBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.changeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 59);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 101);
             this.dataGridView1.TabIndex = 3;
             // 
             // EWalletNumber
@@ -80,7 +81,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Controls.Add(this.Pay);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.paymentInfoBtn);
             this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-3, 1);
@@ -99,14 +100,15 @@
             this.Pay.UseVisualStyleBackColor = false;
             this.Pay.Click += new System.EventHandler(this.Pay_Click);
             // 
-            // button1
+            // paymentInfoBtn
             // 
-            this.button1.Location = new System.Drawing.Point(169, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Show info";
-            this.button1.UseVisualStyleBackColor = true;
+            this.paymentInfoBtn.Location = new System.Drawing.Point(169, 46);
+            this.paymentInfoBtn.Name = "paymentInfoBtn";
+            this.paymentInfoBtn.Size = new System.Drawing.Size(75, 50);
+            this.paymentInfoBtn.TabIndex = 2;
+            this.paymentInfoBtn.Text = "Show info";
+            this.paymentInfoBtn.UseVisualStyleBackColor = true;
+            this.paymentInfoBtn.Click += new System.EventHandler(this.paymentInfoBtn_Click);
             // 
             // idBox
             // 
@@ -125,14 +127,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter your EWallet number: ";
             // 
-            // Form6
+            // changeBtn
+            // 
+            this.changeBtn.Location = new System.Drawing.Point(690, 136);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(75, 37);
+            this.changeBtn.TabIndex = 5;
+            this.changeBtn.Text = "Change";
+            this.changeBtn.UseVisualStyleBackColor = true;
+            // 
+            // FormEWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 450);
+            this.ClientSize = new System.Drawing.Size(1148, 450);
+            this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form6";
+            this.Name = "FormEWallet";
             this.Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -145,12 +157,13 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button paymentInfoBtn;
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EWalletNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn balance;
         private System.Windows.Forms.Button Pay;
+        private System.Windows.Forms.Button changeBtn;
     }
 }

@@ -70,6 +70,24 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChangeCreditCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeCreditCard.Designer.cs">
+      <DependentUpon>FormChangeCreditCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangeEWallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeEWallet.Designer.cs">
+      <DependentUpon>FormChangeEWallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeleteCreditCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleteCreditCard.Designer.cs">
+      <DependentUpon>FormDeleteCreditCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangeCreditCard.resx">
+      <DependentUpon>FormChangeCreditCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangeEWallet.resx">
+      <DependentUpon>FormChangeEWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleteCreditCard.resx">
+      <DependentUpon>FormDeleteCreditCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPayment.resx">
       <DependentUpon>FormPayment.cs</DependentUpon>
